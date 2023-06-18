@@ -371,10 +371,6 @@ p {
 
 .currencyModal{
   background: transparent;
-   background-image: url('../public/noise.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   color: white;
   border-radius: 10px;
   margin-top: -50px;
