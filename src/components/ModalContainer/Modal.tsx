@@ -12,12 +12,19 @@ interface ModalProps {
 const Modal = ({setOpen, inputValue}: ModalProps) => {
     const [openModal, setOpenModal] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
+    
+    const state = {
+        symbol: "USDC",
+        logoURI: "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/logo.png"
+    }
+
+    const [selectedCoin, setSelectedCoin] = useState(state);
+
 
     const handleClose = () => { 
         setOpen(false)
     }
 
-    
     const handleCurrencyModal: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.stopPropagation()
         setIsOpen(false)
@@ -61,10 +68,13 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
 
                 <div className="currencyContainer">
                     
-                    <button onClick={handleCurrencyModal}>
-                        <img src="" alt="selected coin logo" />
-                        <p className="coinBtnName">GOBI</p>
-                        <div className="icon"></div>
+                    <button className="currencyBtn" onClick={handleCurrencyModal}>
+                        
+                        <div className='imageContainer'>
+                            <img src={selectedCoin?.logoURI ? selectedCoin?.logoURI : state?.logoURI} className="" alt="selected coin logo" />
+                        </div>
+                        <p className="coinBtnName">{selectedCoin?.symbol ? selectedCoin?.symbol : state?.symbol}</p>
+                        <div className={`arrowDropDown ${openModal ? 'open' : ''}`}></div>
                     </button>
                     
                     {openModal && (
@@ -72,6 +82,8 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
                             setIsOpen={setIsOpen}
                             handleClick={handleClick}
                             setOpenModal={setOpenModal}
+                            selectedCoin={selectedCoin}
+                            setSelectedCoin={setSelectedCoin}
                         />
                     )}
                     

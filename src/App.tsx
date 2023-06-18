@@ -30,10 +30,10 @@ function App() {
           Make Payment
         </button>
 
-        {!open && (
+        {open && (
           <Modal setOpen={setOpen} inputValue={inputValue} />
         )}
-        
+
       </div>
       
     </div>

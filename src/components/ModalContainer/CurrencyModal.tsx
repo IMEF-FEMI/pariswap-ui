@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import coinData from '../../tokenlist.json' // Assuming the JSON file is in the root directory
 
-const CurrencyModal = ({ handleClick, setOpenModal }: any) => {
+const CurrencyModal = ({ handleClick, setOpenModal, selectedCoin, setSelectedCoin }: any) => {
     
     const [filter, setFilter] = useState('')
-    const [selectedCoin, setSelectedCoin] = useState("");
 
 
     const truncateName = (name:any) => {
@@ -36,11 +35,10 @@ const CurrencyModal = ({ handleClick, setOpenModal }: any) => {
 
     const handleCoinClick = (coin: any) => {
         setSelectedCoin(coin);
-        // setOpenModal(false) 
+        setOpenModal(false) 
     };
 
 
-    console.log(selectedCoin)
 
     return (
         <div className='currencyModal' onClick={handleClick}>
