@@ -21,9 +21,8 @@ const Accordion: React.FC<AccordionProps> = ({ title,  bettingAmount, platformFe
         <>
             <div className="paymentBreakdown" onClick={toggleAccordion}>
                 <p>{title}</p>
-                <button className="toggleButton">
-                    {isOpen ? '-' : '+'}
-                </button>    
+                   
+                <div className={`arrowDropDown ${isOpen ? 'open' : ''}`}></div>
             </div>
 
             {isOpen && (

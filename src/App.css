@@ -15,7 +15,7 @@
 
 .App {
   text-align: center;
-  background: linear-gradient(45deg, #000000, #363636);
+  background: linear-gradient(45deg, #19232D, #19232D);
   animation: gradientAnimation 5s linear infinite;
   min-height: 100vh;
 }
@@ -67,18 +67,16 @@ p {
   cursor: pointer;
   color: #fff;
   font-weight: bold;
-  background: linear-gradient( 90deg, red, blue, #61dafb); 
+  background: linear-gradient( 90deg, red, #19232D, #61dafb); 
   transition: 0.5s ease-in-out;
 }
 
 
 
 .modalContainer{
-  position: absolute;
+  position: fixed;
   min-height: 80vh;
   width: 100%;
-  background: linear-gradient(45deg, #000000, #363636);
-  animation: gradientAnimation 5s linear infinite;
   top: 0;
   left: 0;
   right: 0;
@@ -87,23 +85,13 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 30px;
+  background-color: rgba(0,0,0,0.1);
 }
 
 
 .poweredContainer{
   font-family: 'Urbanist', sans-serif;
-  background: #282c34;
-  background-image: url('../public/noise.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: fixed;
-  z-index: 40;
-  right: 20px;
   font-weight: bold;
-  bottom: 30px;
-  padding: 10px;
 }
 
 @media (max-width: 768px){
@@ -116,16 +104,9 @@ p {
 
 .modalContent{
   border-radius: 20px;
-  width: 500px;
-  background: #001E4E;
-
-  background-image: url('../public/noise.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-
-
-
+  width: 400px;
+  background: #304256;
+  animation: gradientAnimation 5s linear infinite;
   color: white;
   padding: 20px;
 }
@@ -164,14 +145,14 @@ p {
   font-size: 12px;
   cursor: pointer;
   color: white;
-  background: #005AEB;
+  background: #19232D;
   padding: 10px 20px;
   border-radius: 10px;
   transition: all 0.5s;
 }
 
 .cancelBtn > p:hover {
-  background-color: blue;
+  background-color: black;
 }
 
 
@@ -181,7 +162,7 @@ p {
 
 .betValue{
   font-size: 16px;
-  text-align: left;
+  text-align: center;
   margin: 20px 0;
   font-family: 'Urbanist', sans-serif;
 }
@@ -201,7 +182,7 @@ p {
 }
 
 .timer > p > span {
-  background: blue;
+  background: linear-gradient(45deg, #000000, #ffffff);
   padding: 10px;
   border-radius: 10px;
   color: white;
@@ -214,8 +195,8 @@ p {
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
-  background-color: #005AEB;
-  padding: 10px;
+  background: #202734;
+  padding: 15px 20px;
   border-radius: 7px;
   cursor: pointer;
 }
@@ -242,9 +223,9 @@ p {
   border-radius: 0px 0px 4px 4px;
   animation: slideDown 0.2s ease-in-out;
   display: flex;
-  border-bottom: 2px solid blue;
-  border-right: 2px solid blue;
-  border-left: 1px solid blue;
+  border-bottom: 2px solid #19232D;
+  border-right: 2px solid #19232D;
+  border-left: 1px solid #19232D;
   flex-direction: column;
   align-items: flex-start;
   color: white;
@@ -277,7 +258,24 @@ p {
 
 
 
+.loader {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid #000000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 
 
@@ -316,15 +314,35 @@ p {
 
 
 .currencyContainer{
-  margin-top: 20px;
+  margin-top: 10px;
   position: relative;
   width: 100%;
 }
 
+.balanceContainer{
+  display: flex;
+  justify-content: space-between;
+  background: #19232D;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.balanceTitle{
+  font-family: 'Urbanist', sans-serif;
+  font-family: bold;
+  font-size: 12px;
+}
 
 .currencyBtn {
   padding: 10px 15px; 
-  background: #005AEB;
+  background: #304256;
   position: relative;
   border: none;
   color: white;
@@ -338,10 +356,11 @@ p {
   transition: 0.5s;
   position: relative;
   z-index: 3;
+  border: 1px solid transparent;
 }
 
 .currencyBtn:hover {
-  background: blue;
+  border: 1px solid green;
 }
 
 .coinBtnName {
@@ -373,10 +392,10 @@ p {
   background: transparent;
   color: white;
   border-radius: 10px;
-  margin-top: -50px;
+  margin-top: -70px;
   position: relative;
   z-index: 5;
-  box-shadow: 0px 2px 2px blue;
+  box-shadow: 0px 2px 2px  #19232D;
   overflow: hidden;
   animation: slideDown 0.2s ease-in-out;
 }
@@ -385,10 +404,10 @@ p {
 .searchContainer {
   width: 100%;
   overflow: hidden;
-  background: #005AEB;
+  background: #19232D;
   border-radius: 5px;
   display: flex;
-  border: 2px solid blue;
+  border: 2px solid #19232D;
 }
 
 .closeInput {
@@ -396,19 +415,19 @@ p {
   cursor: pointer;
   border: none;
   outline: none;
-  background: blue;
+  background: #19232D;
   color: white;
   transition: 0.5s;
 }
 
 .closeInput:hover {
-  background: #005AEB;
+  background: black;
 }
 
 .searchContainer > input {
   outline: none;
   padding: 0px 20px;
-  height: 40px;
+  height: 30px;
   background: transparent;
   border: none;
   color: white;
@@ -419,6 +438,8 @@ p {
 .coinContainer{
   overflow: hidden;
   overflow-y: scroll;
+  border: 2px solid #19232D;
+  background: #304256;
   height: 300px;
 
 }
@@ -448,7 +469,6 @@ p {
   margin: 5px 0;
   padding: 5px 20px;
   border-radius: 5px;
-  /* border-bottom: 1px solid grey; */
   margin-bottom: 20px;
   cursor: pointer;  
   color: white;
@@ -511,3 +531,25 @@ p {
 }
 
 
+.proceedBtn{
+  background: #19232D;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Urbanist";
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.proceedBtn:hover{
+  border: 1px solid green;
+}

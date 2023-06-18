@@ -40,6 +40,16 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
     }
 
    
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleLoader = () => {
+        setIsLoading(true);
+
+        // Simulate an asynchronous operation
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+    };
 
     return (
         <div className="modalContainer">
@@ -68,14 +78,21 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
 
                 <div className="currencyContainer">
                     
-                    <button className="currencyBtn" onClick={handleCurrencyModal}>
-                        
-                        <div className='imageContainer'>
-                            <img src={selectedCoin?.logoURI ? selectedCoin?.logoURI : state?.logoURI} className="" alt="selected coin logo" />
+                    <div className="balanceContainer">
+                        <button className="currencyBtn" onClick={handleCurrencyModal}>
+                            <div className='imageContainer'>
+                                <img src={selectedCoin?.logoURI ? selectedCoin?.logoURI : state?.logoURI} className="" alt="selected coin logo" />
+                            </div>
+                            <p className="coinBtnName">{selectedCoin?.symbol ? selectedCoin?.symbol : state?.symbol}</p>
+                            <div className={`arrowDropDown ${openModal ? 'open' : ''}`}></div>
+                        </button>
+
+                        <div className="balance">
+                            <p className="balanceTitle">BAL:</p>
+                            <p>1000.001</p>
                         </div>
-                        <p className="coinBtnName">{selectedCoin?.symbol ? selectedCoin?.symbol : state?.symbol}</p>
-                        <div className={`arrowDropDown ${openModal ? 'open' : ''}`}></div>
-                    </button>
+
+                    </div>
                     
                     {openModal && (
                         <CurrencyModal
@@ -89,16 +106,20 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
                     
                 </div>
                 
+                <button className="proceedBtn" onClick={handleLoader}>
+                    {isLoading ? (
+                        <span className="loader"></span>
+                    ) : (
+                        'Proceed / Insufficient / Timeout'
+                    )}
+                </button>
                 
+
+                <div className="poweredContainer">
+                    <p >Powered By IMEF.</p>
+                </div>
+
             </div>
-            
-
-            
-
-            <div className="poweredContainer">
-                <p >Powered By IMEF.</p>
-            </div>
-
 
         </div>
     )
