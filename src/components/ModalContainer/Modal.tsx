@@ -6,7 +6,7 @@ import Timer from "./Timer"
 
 interface ModalProps {
     setOpen: (value: boolean) => void
-    inputValue: number | undefined
+    inputValue: string
 }
 
 const Modal = ({setOpen, inputValue}: ModalProps) => {

@@ -2,7 +2,7 @@ import React from 'react'
 
 interface AccordionProps {
     title: string
-    bettingAmount: number | undefined,
+    bettingAmount: string | undefined,
     platformFee: string | undefined
     swapFee: string | undefined
     isOpen: boolean

@@ -15,21 +15,21 @@ code {
 
 
 input::placeholder {
-  color: whitesmoke; /* Placeholder text color */
+  color: white; /* Placeholder text color */
   font-size: 15px;
 }
 
 input::-webkit-input-placeholder {
-  color: whitesmoke; /* Placeholder text color for WebKit browsers (Chrome, Safari, etc.) */
+  color: white; /* Placeholder text color for WebKit browsers (Chrome, Safari, etc.) */
   font-size: 15px;
 }
 
 input::-moz-placeholder {
-  color: whitesmoke; /* Placeholder text color for Firefox */
+  color: white; /* Placeholder text color for Firefox */
   font-size: 15px;
 }
 
 input:-ms-input-placeholder {
-  color: whitesmoke; /* Placeholder text color for Microsoft Edge */
+  color: white; /* Placeholder text color for Microsoft Edge */
   font-size: 15px;
 }

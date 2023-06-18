@@ -4,7 +4,7 @@ import Modal from './components/ModalContainer/Modal';
 
 function App() {
   const [open, setOpen] = useState(false);
-  const [inputValue, setInputValue] = useState<number | undefined>();
+  const [inputValue, setInputValue] = useState<string>("");
 
   const handleOpen = () => {
     if (inputValue) {
@@ -15,7 +15,7 @@ function App() {
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(Number(e.target.value));
+    setInputValue(e.target.value);
   }
 
   return (
@@ -30,7 +30,7 @@ function App() {
           Make Payment
         </button>
 
-        {!open && (
+        {open && (
           <Modal setOpen={setOpen} inputValue={inputValue} />
         )}
 
