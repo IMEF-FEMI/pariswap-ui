@@ -413,10 +413,10 @@ p {
   outline: none;
   padding: 0px 20px;
   height: 40px;
-  
   background: transparent;
   border: none;
   color: white;
+  font-size: 16px;
 }
 
 
