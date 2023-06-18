@@ -2,6 +2,7 @@ import { useState } from "react"
 import CurrencyModal from "./CurrencyModal"
 import { MouseEventHandler } from 'react'
 import Accordion from "./Accordion"
+import Timer from "./Timer"
 
 interface ModalProps {
     setOpen: (value: boolean) => void
@@ -20,7 +21,7 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
     const handleCurrencyModal: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.stopPropagation()
         setIsOpen(false)
-        setOpenModal(true)
+        setOpenModal(() => !openModal)
     }
 
     const handleCurrencyClose = () => { 
@@ -45,11 +46,7 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
 
                 <p className="betValue">You're paying <span>{inputValue}</span> USDC</p>
 
-                <div className="timer">
-                    <p>Starts in:</p>
-                    <p><span>00</span> : <span>00</span> : <span>00</span></p>
-                </div>
-
+                <Timer/>
 
                 <Accordion
                     title="Breakdown of Payment"
@@ -66,7 +63,7 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
                     
                     <button onClick={handleCurrencyModal}>
                         <img src="" alt="selected coin logo" />
-                        <p>GOBI</p>
+                        <p className="coinBtnName">GOBI</p>
                         <div className="icon"></div>
                     </button>
                     
@@ -74,6 +71,7 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
                         <CurrencyModal
                             setIsOpen={setIsOpen}
                             handleClick={handleClick}
+                            setOpenModal={setOpenModal}
                         />
                     )}
                     
@@ -82,6 +80,14 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
                 
             </div>
             
+
+            
+
+            <div className="poweredContainer">
+                <p >Powered By IMEF.</p>
+            </div>
+
+
         </div>
     )
 }

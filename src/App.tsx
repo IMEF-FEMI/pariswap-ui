@@ -33,7 +33,7 @@ function App() {
         {!open && (
           <Modal setOpen={setOpen} inputValue={inputValue} />
         )}
-
+        
       </div>
       
     </div>

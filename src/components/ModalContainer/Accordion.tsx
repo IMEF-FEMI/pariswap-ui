@@ -15,7 +15,7 @@ const Accordion: React.FC<AccordionProps> = ({ title,  bettingAmount, platformFe
         setIsOpen(!isOpen)
     }
 
-    const total = Number(bettingAmount) + Number(platformFee) + Number(swapFee)
+    const total = Number(bettingAmount ? bettingAmount : 0) + Number(platformFee) + Number(swapFee)
 
     return (
         <>
@@ -28,7 +28,7 @@ const Accordion: React.FC<AccordionProps> = ({ title,  bettingAmount, platformFe
 
             {isOpen && (
                 <div className="accordionContent">
-                    <p>Betting amount: <span>{bettingAmount} USDC</span></p> 	
+                    <p>Betting amount: <span>{bettingAmount ? bettingAmount : 0} USDC</span></p> 	
                     <p>Platform fee: <span>{platformFee} USDC</span></p>
                     <p>Swap fee: <span>{swapFee} USDC</span></p>
                     <p>Total Amount: <span>{total} USDC</span></p>
