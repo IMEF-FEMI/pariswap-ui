@@ -116,7 +116,7 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
                 
 
                 <div className="poweredContainer">
-                    <p >Powered By IMEF.</p>
+                    <p >Powered by pariswap.</p>
                 </div>
 
             </div>
