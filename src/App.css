@@ -94,14 +94,9 @@ p {
 .poweredContainer{
   font-family: 'Urbanist', sans-serif;
   font-weight: bold;
+  font-size: 12px;
 }
 
-@media (max-width: 768px){
-  .poweredContainer{
-    bottom: 20px;
-    right: 0;
-  }
-}
 
 
 .modalContent{
