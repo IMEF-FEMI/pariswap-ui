@@ -39,3 +39,5 @@ const Accordion: React.FC<AccordionProps> = ({ title,  bettingAmount, platformFe
 }
 
 export default Accordion
+
+

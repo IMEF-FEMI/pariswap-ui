@@ -106,7 +106,7 @@ const Modal = ({setOpen, inputValue}: ModalProps) => {
                     
                 </div>
                 
-                <button className="proceedBtn" onClick={handleLoader}>
+                <button className="insufficientFundsBtn" onClick={handleLoader}>
                     {isLoading ? (
                         <span className="loader"></span>
                     ) : (
